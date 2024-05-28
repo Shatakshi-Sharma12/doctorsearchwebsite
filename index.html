@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doctor Search</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
+      rel="stylesheet"
+      id="bootstrap-css"
+    />
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Oleo+Script:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Teko:400,700" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <img src="logo.jpg" alt="Logo" />
+        </div>
+        <div class="nav-buttons">
+         <a href="#"> <button class="nav-button">Home</button></a>
+         <a href="#contact"> <button class="nav-button">Contact Us</button></a>
+         <form class="search">
+          <input type="text" class="search-input" placeholder="Search" aria-label="Search">
+          <button class="search-button" type="submit">Search</button>
+        </form>
+        </div>
+      </nav>
+    </header>
+    
+    <div class="hero-section">
+      <div class="hero-content">
+        <h1> <span class="content-header wow fadeIn " data-wow-delay="0.2s" data-wow-duration="2s"> Welcome to Health Is Care</span></h1>
+        <p style="color: green; font-family: 'verdana', serif;">
+          Our mission is to connect you with the best doctors available,
+          prioritizing your health and well-being above all else. Whether you
+          need a specialist or a general practitioner, we offer a comprehensive
+          directory of medical professionals across all categories and
+          locations. With our easy-to-use search feature, you can quickly find
+          the right doctor for your specific needs. Trust us to help you
+          navigate your healthcare journey with confidence and convenience,
+          ensuring you receive the quality care you deserve, wherever you are.
+        </p>
+        <button class="get-started-button" onclick="scrollToDoctorSearchArea()">
+          Get Started
+        </button>
+        <!-- Corrected function name here -->
+      </div>
+      <div class="hero-image">
+        <img src="doctor.png" alt="Doctor" />
+      </div>
+    </div>
+    <div class="doctor-search-area">
+      <h2>Find a Specialist Doctor</h2>
+      <div class="search-form">
+        <input type="text" id="specialty" placeholder="Enter Specialty" />
+        <input type="text" id="location" placeholder="Enter Location" />
+        <button onclick="searchDoctors()">Search</button>
+      </div>
+      <div id="doctor-list"></div>
+    </div>
+    <br><br><br>
+    <section id="contact">
+			<div class="section-content">
+				<h1 class="section-header">Get in <span class="content-header wow fadeIn " data-wow-delay="0.2s" data-wow-duration="2s"> Contact with us</span></h1>
+				<h3>If you have any query, contact us.</h3>
+			</div>
+			<div class="contact-section">
+			<div class="container">
+				<form id="contact-form">
+          <div class="col-md-6 form-line">
+            <div class="form-group">
+              <label style="color: black;" for="exampleInputUsername">Your name</label>
+              <input type="text" class="form-control" id="username" placeholder="Enter Name" required>
+            </div>
+            <div class="form-group">
+              <label style="color: black;"  for="exampleInputEmail">Email Address</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter Email id" required>
+            </div>
+            <div class="form-group">
+              <label  style="color: black;" for="telephone">Mobile No.</label>
+              <input type="tel" class="form-control" id="telephone" placeholder="Enter 10-digit mobile no." required>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label style="color: black;"  for="description">Message</label>
+              <textarea class="form-control" id="description" placeholder="Enter Your Message" required></textarea>
+            </div>
+            <div>
+              <button type="submit" class="btn btn-default submit"><i class="fa fa-paper-plane" aria-hidden="true"></i> Send Message</button>
+            </div>
+          </div>
+        </form>
+        
+			</div>
+		</section>
+    <script>
+      document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+      
+        // Gather form data
+        const name = document.getElementById('username').value;
+        const email = document.getElementById('email').value;
+        const telephone = document.getElementById('telephone').value;
+        const message = document.getElementById('description').value;
+      
+        // Create an object to send
+        const formData = {
+          name: name,
+          email: email,
+          telephone: telephone,
+          message: message
+        };
+      
+        // Send the data using AJAX
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', 'contact.php', true); // Change 'contact.php' to your server-side script
+        xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4) {
+            if (xhr.status === 405) {
+              alert('Your message has been sent successfully!');
+              document.getElementById('contact-form').reset(); // Reset the form
+            } else {
+              // Log the error response for debugging
+              console.error(xhr.responseText);
+              alert('There was an error sending your message.');
+            }
+          }
+        };
+        xhr.send(JSON.stringify(formData));
+      });
+      </script>
+      
+      
+
+    <script src="script.js"></script>
+  </body>
+</html>

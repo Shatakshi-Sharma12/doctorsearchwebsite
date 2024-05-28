@@ -1,0 +1,281 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #007bff, #00ff99);
+}
+
+header {
+  position: sticky;
+  top: 0;
+  background-color: #007bff;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.nav-buttons {
+  display: flex;
+}
+.search {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.search-input {
+  width: 200px;
+  padding: 10px 15px;
+  border-radius: 30px 0 0 30px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.search-input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.search-button {
+  background-color: #0056b3;
+  color: white;
+  border: 1px solid #0056b3;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 0 30px 30px 0;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.search-button:hover {
+  background-color: #003d80;
+  border-color: #003d80;
+}
+
+.nav-button {
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-left: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.nav-button:hover {
+  background-color: #003d80;
+}
+.hero-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 20px;
+  background-image: url(bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero-content {
+  max-width: 50%;
+}
+
+.hero-content h1 {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 150px; /* Adjust this value for more space */
+}
+
+.hero-content p {
+  background-color: white;
+  padding: 10px;
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 30px; /* Adjust this value for more space */
+}
+
+.get-started-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 30px; /* Adjust this value for more space */
+  transition: background-color 0.3s;
+}
+
+.get-started-button:hover {
+  background-color: #0056b3;
+}
+
+.hero-image img {
+  width: 400px;
+  height: auto;
+  margin-bottom: 0%;
+}
+
+.container {
+  padding: 50px 20px;
+}
+.doctor-search-area {
+  background-image: url(d.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 50px;
+}
+
+.doctor-search-area h2 {
+  height: 100px;
+  margin-left: 600px;
+  margin-top: 200px;
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.search-form {
+  margin-left: 500px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 200px;
+}
+
+.search-form input[type="text"] {
+  width: 200px;
+  padding: 10px;
+  font-size: 16px;
+  margin-right: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.search-form button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.search-form button:hover {
+  background-color: #0056b3;
+}
+
+#doctor-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.doctor-card {
+  background-color: #fff;
+  padding: 10px;
+
+  margin: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  width: calc(15% - 20px); /* Decreased the size of result cards */
+  max-width: 300px; /* Decreased the maximum width of result cards */
+}
+
+.doctor-card img {
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.doctor-card h3 {
+  margin: 0;
+  font-size: 18px; /* Adjusted font size */
+}
+
+.doctor-card p {
+  margin: 5px 0;
+  font-size: 14px; /* Adjusted font size */
+}
+.content-header {
+  font-family: "Oleo Script", cursive;
+  color: blue;
+  font-size: 45px;
+}
+
+.section-content {
+  text-align: center;
+}
+.section-content h3 {
+  color: rgb(255, 0, 0);
+}
+#contact {
+  font-family: "Teko", sans-serif;
+  padding-top: 60px;
+  width: 100%;
+  width: 100vw;
+  height: 550px;
+  background: #3a6186; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to left,
+    #70a3d2,
+    #fee34e
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to left,
+    #6da6db,
+    #ef6f8f
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: #fff;
+}
+.contact-section {
+  padding-top: 40px;
+}
+.contact-section .col-md-6 {
+  width: 50%;
+}
+
+.form-line {
+  border-right: 1px solid #b29999;
+}
+
+.form-group {
+  margin-top: 10px;
+}
+label {
+  font-size: 1.3em;
+  line-height: 1em;
+  font-weight: normal;
+}
+.form-control {
+  font-size: 1.3em;
+  color: #080808;
+}
+textarea.form-control {
+  height: 135px;
+  /* margin-top: px;*/
+}
+
+.submit {
+  font-size: 1.1em;
+  float: right;
+  width: 150px;
+  background-color: transparent;
+  color: #fff;
+}
